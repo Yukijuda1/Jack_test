@@ -1,0 +1,77 @@
+session机制：（重要）
+简单来说：客户端发起请求，服务器会检查请求中是否包含以个session标识，如果包含
+session标识则说明这个客户以前创建过session，服务器就根据请求中sessionid把这个session
+对象检索出来使用。如果未包含session标识或者检索不出相应sessionid则会创建一个session给
+这个客户使用 
+自己为客户端和服务器时，每次完全关闭所有浏览器后session会消失。然后真正的情况是客服端创建的
+session会保存在服务器中，下次请求时找出来使用
+
+使用cookie来根据session：
+session通过SessionID来区分不同的客户，session是以cookie或URL重写为基础的，默认使用cookie来实现，系统会创建
+一个Name为JSESSION的输出cookie(value为sessionID)。
+
+HttpSession的生命周期：
+创建：客户端第一次浏览非session="false"的jsp页面或者访问Servlet，该Servlet调用的request.getSession(true)方法
+销毁（重要）：
+1、调用session.invalidate();
+2、超过了session的最大存在时间（可通过session.setMaxInactiveInterval()设定，单位为分钟）
+3、服务器进程停止或web应用被卸载（服务器和客服端一体时，关闭所有浏览器就相当于服务器进程停止，所有再次打开浏览器加载jsp和Servlet时会重新生成以个Session）
+关闭浏览器session cookie会失效，服务器端的session对象不会消失，可通过持久化cookie（设置存活时长）和URL重写获得session
+
+
+session的重要方法
+session.getId()
+session.isNew()//判断session是否是新的（session不会因为关闭浏览器而毁灭）
+session.getMaxInactiveInterval()//获取session最大存在时间
+session.getCreationTime()//获取session创建时间,返回一个long型
+session.getLastAccessedTime()//获取session上次访问的时间，返回一个long型
+//最最重要
+session.getAttruibute()和setxxxx
+
+
+sessionURL重写：
+Servlet规范中引入了一种补充的会话管理机制，当cookie不生成的浏览器中
+也可以保持连续的会话
+response.encodeURL("页面地址")；这样跳转过去后session还是原来的session并不会重现创建
+
+路径问题：
+转发重定向时统一这样写路径：
+request.getSevletContextPath+"/xx"
+Servlet最好配置mapping
+
+
+表单重复提交问题：
+问题：
+比如：一个jsp中有表单，请求发送到一个Servlet，然后Servlet转发请求到一个jsp页面，地址仍是Servlet
+在这个Servlet地址里刷新，就会出现表单重复提交。
+比如：网速慢，Servlet还没处理好（还没跳转到jsp页面），在上一个jsp页面中狂点提交
+
+危害：
+拖慢服务器
+
+解决：
+在表单中做一个标记，到Servlet中检查标记，若有标记则受理并撕毁标记。否则不受理
+使用TokenProcessor工具类
+表单jsp中添加一个隐藏input
+<input type="hidden" name="COM.ATGUIGU.TOKEN_KEY" value="<%= TokenProcessor.getInstance().saveToken(request)%>"/>
+
+Servlet中
+boolean valid=TokenProcessor.getInstance().isTokenValid(request);
+	if(valid) {
+		TokenProcessor.getInstance().resetToken(request);
+		……//这里写Servlet处理过程
+	}
+	else {
+		response.sendRedirect(request.getContextPath()+"/token.jsp");
+		//重复提交则会跳转到重复提交表单的页面
+	}
+	
+	
+使用session完成验证码
+
+
+
+
+
+
+

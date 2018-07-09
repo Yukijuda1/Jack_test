@@ -1,0 +1,79 @@
+filter是请求的拦截器
+filter实现类实现了filter接口
+访问某个Servlet，jsp，html时如果被filter拦截了，就运转filter类
+必定调用init和do方法。和Servlet很像
+
+1、注册和filter
+<filter>
+<filter-name>不重要</filter-name>
+<filter-class>重要</filter-class>
+<init-param>
+<name></name>
+<value></value>
+</init-param>
+</filter>
+
+<filter-mapping>
+<filter-name>不重要</filter-name>
+<url-pattern>需要拦截的jsp、servlet或者html路径</url-pattern
+</filter-mapping>
+
+2、filter的API
+public void init(FilterConfig filterConfig){
+运转filter时调用该方法，只调用一次
+}
+public void doFilter(ServletRequest requesrt,ServletResponse response Filterchain chain){
+
+chain.doFilter(request,response);放行方法，chain是一个链条，最后一个filter放行
+多个filter拦截同一个Servlet、jsp即url-pattern相同
+则拦截顺序根据是<filter-mapping>配置顺序拦截
+}
+
+
+3、filter的实现类HttpFilter（自写）
+
+
+
+4、Filter中代码的执行顺序
+在doFilter(req,resp)中写代码
+chain.doFilter(request,response)将请求传递给下一个Filter链
+但是后面再写代码呢？
+请求被Filter拦下后，Filter执行chain.doFilter(req,resp)后直接执行下一个Filter的doFilter，最后请求到了
+jsp、Servlet、Html中
+然后再返回执行Filter中chain.doFilter(req,resp)后的代码，逆方向
+
+1->3->5->4->2
+
+5、配置Filter中dispatcher节点：
+dispatcher节点：决定将请求到Servlet中的方法
+使用：
+比如Servlet中请求转发到了hello.jsp，但是地址栏中仍是Servlet的mappping映射
+此时hello.jsp的过滤器Filter不会进行拦截（可以理解成地址栏要变成hello.jsp才行）
+此时就要在拦截hello.jsp的Filter中配置dispatcher节点
+（连接a，get请求，post请求，直接访问。都是一种请求，地址栏会改变）
+
+web.xml中配置：
+<filter-mapping>
+<filter-name>不重要</filter-name>
+<url-pattern>需要拦截的jsp、servlet或者html路径</url-pattern
+<dispatcher>FORWARD</dispatcher>  //默认为REQUEST
+</filter-mapping>
+配置后，即便是转发到hello.jsp中也会被该Filter拦截
+另外：一个jsp、html、Servlet被多个Filter拦截时只有配置了的dispatcher的Filter才会在转发中工作
+重要：此时在直接请求hello，配置了dispatcher（FORWARD）的Filter不工作
+<dispatcher>FORWARD</dispatcher>
+<dispatcher>REQUEST</dispatcher>
+这样无论是直接请求还是转发都会进行拦截
+<dispatcher>ERROR</dispatcher>
+拦截目标是通过Error page方法调用的，则需要配置这个，才能让Filter工作
+（Error page配置）
+<error-page>  <error-code>500</error-code>
+<exception-type>java.lang.ArithmeticException</exception-type>
+<location>错误页面jsp</location>
+</error-page>
+这样发生错误的页面就会调用错误页面.jsp
+拦截错误页面.jsp的Filter配置dispatcher ERROR后可以进行拦截
+</error-page>
+
+
+

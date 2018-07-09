@@ -1,0 +1,993 @@
+
+a:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+.autoHeight{
+    height: auto!important;
+    min-height: 0px;
+    height: 0px;
+}
+.autoHeight:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+
+.commentBox{
+    border: 1px solid #d6d6d6;
+}
+.commentBox h2{
+    height: 64px;
+    border-bottom: 1px solid #e6e6e6;
+    background: url("../images/h2_icon.jpg") no-repeat 12px center;
+    line-height: 64px;
+    padding-left: 26px;
+    font-size: 24px;
+    color: #1790e6;
+    font-weight: normal;
+    text-align: left;
+}
+.commentBox h2 .t_c{
+    color: #333;
+    float: left;
+}
+.commentBox .comment_num{
+    float: right;
+    width: 100px;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 20px;
+    color: #656565;
+}
+.commentBox .comment_num .total{
+    color: #ff4e1f;
+}
+.textareawrap{
+    padding: 24px 24px 0;
+}
+.commentBox .textareaDiv{
+    height: 88px;
+    border: 1px solid #d6d6d6;
+    padding: 5px 9px;
+    background: #fff;
+}
+.commentBox .textareaDiv .textare{
+    width: 100%;
+    height: 88px;
+    border: 0;
+    outline: none;
+    color: #333;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+.func_area{
+    height: 40px;
+    border: 1px solid #d6d6d6;
+    border-top: 0;
+    position: relative;
+}
+/*表情*/
+.ficon_face{
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+    position: relative;
+}
+.ficon_faceBtn{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url("../images/comment-icon.png") -1px -1px;
+}
+.ficon_faceBtn:hover{
+    background: url("../images/comment-icon.png") right -1px;
+}
+.faceBox {
+    width: 315px;
+    height: 158px;
+    border: 1px solid #d1d7dc;
+    background: #f8fcff;
+    position: absolute;
+    margin-top: 00px;
+    margin-left: -5px;
+    border-radius: 8px;
+    padding: 10px;
+    display: none;
+    z-index: 99999;
+}
+.faceBox .fBar {
+    height: 22px;
+    line-height: 22px;
+}
+.faceBox .fBar ul {
+    float: left;
+}
+
+.faceBox .fBar ul li {
+    padding-right: 10px;
+    float: left;
+    cursor: pointer;
+}
+.faceBox .fBar ul li.cur {
+    color: #46a1e1;
+}
+.faceBox .fBar .close {
+    width: 9px;
+    height: 11px;
+    float: right;
+    background: url(https://static.dmzj.com/ucenter/images/bg_layerclose.png) no-repeat center;
+    display: block;
+}
+.faceBox .face {
+    margin-top: 3px;
+    width: 312px;
+    height: 130px;
+    border-bottom: 1px solid #dfe6f6;
+    border-left: 1px solid #dfe6f6;
+    padding-top: 0;
+}
+.faceBox .face li {
+    cursor: pointer;
+    border-top: 1px solid #dfe6f6;
+    border-right: 1px solid #dfe6f6;
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+
+/*图片*/
+.ficon_img{
+    width: 18px;
+    height: 16px;
+    float: left;
+    background: url("../images/comment-icon.png") -2px -49px;
+    margin: 12px 0 0 13px;
+    cursor: pointer;
+}
+.ficon_img:hover{
+    background: url("../images/comment-icon.png") right -49px;
+}
+.ficon_swtop{
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url("../images/comment-icon.png") -2px -92px;
+    margin: 10px 0 0 13px;
+    cursor: pointer;
+}
+.ficon_swtop:hover{
+    background: url("../images/comment-icon.png") right -92px;
+}
+.ficon_topic{
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url("../images/comment-icon.png") -2px -137px;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+}
+.ficon_topic:hover{
+    background: url("../images/comment-icon.png") right -137px;
+}
+.func_area .loginName{
+    padding-left: 22px;
+    float: left;
+    line-height: 40px;
+}
+.func_area .loginName a{
+    padding: 0 10px;
+}
+.func_area .loginName a.name{
+    color: #1790e6;
+}
+.func_area .loginName a.out{
+    color: #666666;
+}
+.SubmitBtn{
+    width: 84px;
+    height: 30px;
+    border: 1px solid #3086c6;
+    background: #3591d5;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    float: right;
+    margin: 4px;
+}
+.SubmitBtn:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.SubBtn_load{
+    background:#eee;
+    cursor: not-allowed;
+    border: 1px solid #EEEEEE;
+}
+.num_S_txt{
+    float: right;
+    line-height: 40px;
+    color: #666666;
+    font-size: 12px;
+    padding-right: 10px;
+}
+.num_S_txt span{
+    color: #fe5419;
+}
+.comment_tab{
+    height: 39px;
+    margin: 24px 24px 0 24px;
+    line-height: 40px;
+    color: #333333;
+    border-bottom: 1px solid #d6d6d6;
+}
+.comment_tab li{
+    width: 96px;
+    height: 39px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    line-height: 39px;
+    font-size: 16px;
+}
+.comment_tab li.cur{
+    height: 38px;
+    line-height: 38px;
+    color: #1790e6;
+    border-bottom: 2px solid #3591d5;
+}
+.comment_con_tab{
+    display: none;
+}
+.comment_con_tab.con_select{
+    display: block;
+}
+.comment_con{
+    margin: 0 24px;
+}
+.comment_con_li{
+    margin: 25px 0;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 20px;
+}
+.comment_con_li .photo{
+    width: 58px;
+    height: 58px;
+    float: left;
+    border: 1px solid #d6d6d6;
+    position: relative;
+}
+.comment_con_li .photo img{
+    border: 0;
+}
+.comment_con_li .photo.bor{
+    border: 1px solid #fc8b19;
+}
+.comment_con_li .photo .authorIcon{
+    width: 78px;
+    height: 18px;
+    background: url("../images/icon_author.png");
+    position: absolute;
+    bottom: -9px;
+    left: -11px;
+    display: block;
+}
+.comment_con_li .photo .authorIcon_1{
+    width: 78px;
+    height: 18px;
+    background: url("../images/icon_author_1.png");
+    position: absolute;
+    bottom: -9px;
+    left: -11px;
+    display: block;
+}
+.comment_con_li .content_r{
+    margin-left: 75px;
+    position: relative;
+}
+.content_r .info_bar{
+    height: 18px;
+}
+.content_r .info_bar .userName{
+    color: #999;
+    display: block;
+    float: left;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: -2px;
+}
+.content_r .info_bar .userName_author{
+    color: #999;
+    display: block;
+    float: left;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: -2px;
+    color: #fe8a19;
+}
+.content_r .floor{
+    float: right;
+    font-size: 14px;
+    color: #999999;
+    line-height: 18px;
+}
+.content_r .text{
+    font-size: 14px;
+    color: #333333;
+    margin-top: 8px;
+    line-height: 22px;
+    word-break: break-all;
+
+}
+.content_r .text .textCon{
+    display: block;
+}
+.content_r .text .textCon.hei{
+    max-height: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+.content_r .text a{
+    display: block;
+    margin-top: 5px;
+}
+.content_r .text.del{
+    color: #ff0000;
+}
+.content_r .text a{
+    color: #3591d5;
+}
+.content_r .btm_bar{
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #999999;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.content_r .btm_bar a{
+    color: #999;
+}
+.content_r .btm_bar a:hover{
+    color: #3591d5;
+}
+.content_r .btm_bar .time{
+    color: #999999;
+    float: left;
+}
+.content_r .btm_bar .handl{
+    margin-right: 17px;
+    color: #999;
+    display: block;
+    float: right;
+}
+.content_r .btm_bar .handl.top,
+.content_r .btm_bar .handl.good,
+.content_r .btm_bar .handl.report{
+    display: none;
+}
+.comment_con_li:hover>.content_r .handl.top,
+.comment_con_li:hover>.content_r .handl.good,
+.comment_con_li:hover>.content_r .handl.report{
+    display: block;
+}
+.icon_jing{
+    width: 57px;
+    height: 56px;
+    background: url("../images/icon_jing.png");
+    position: absolute;
+    top: -25px;
+    right: 80px;
+    display: block;
+}
+.reply_content .icon_jing{
+    right: 125px;
+    display: block;
+    top: -20px;
+}
+.reply_content .btm_bar .icon_hf,
+.reply_content .btm_bar .icon_ding,
+.reply_content .btm_bar .h_1
+{
+    display: none;
+}
+.reply_content .comment_con_li:hover>.btm_bar .icon_hf,
+.reply_content .comment_con_li:hover>.btm_bar .icon_ding,
+.reply_content .comment_con_li:hover>.btm_bar .h_1
+{
+    display: block;
+}
+#top_status_4 .icon_jing{
+    display: none;
+}
+.icon_gg{
+    width: 48px;
+    height: 16px;
+    background: url("../images/comment-icon.png") 0 -400px;
+    float: left;
+    display: block;
+    margin-right: 8px;
+}
+
+.icon_zd{
+    width: 48px;
+    height: 16px;
+    background: url("../images/comment-icon.png") 0 -175px;
+    float: left;
+    display: block;
+    margin-right: 12px;
+}
+.icon_nv{
+    width: 13px;
+    height: 16px;
+    background: url("../images/comment-icon.png") -6px -212px;
+    float: left;
+    margin:0px 0 0 13px ;
+    display: block;
+}
+.icon_nan{
+    width: 13px;
+    height: 16px;
+    background: url("../images/comment-icon.png") -5px -242px;
+    float: left;
+    margin:0px 0 0 13px ;
+    display: block;
+}
+.icon_author{
+    width: 16px;
+    height: 16px;
+    background: url("../images/comment-icon.png") -5px -275px;
+    float: left;
+    margin:0px 0 0 13px ;
+    display: block;
+}
+.icon_book{
+    width: 13px;
+    height: 16px;
+    background: url("../images/comment-icon.png") -6px -310px;
+    float: left;
+    margin:0px 0 0 13px;
+    display: block;
+}
+.icon_hf{
+    float: right;
+    background: url("../images/comment-icon.png") left -373px;
+    padding-left: 25px;
+    line-height: 20px;
+    display: block;
+    float: right;
+}
+.icon_ding{
+    float: right;
+    background: url("../images/comment-icon.png") no-repeat left -343px;
+    padding-left: 25px;
+    line-height: 20px;
+    display: block;
+    float: right;
+    margin:0 17px 17px 0;
+}
+.icon_ding.cur{
+    background: url("../images/comment-icon.png") no-repeat left -430px;
+    color: #1790e6;
+}
+
+/*回复*/
+.reply_box .textareaDiv{
+    margin: 10px 0 0 0;
+}
+.reply_box .func_area{
+    margin: 0;
+    border: 0;
+}
+.reply_box .SubmitBtn{
+    width: 54px;
+    height: 24px;
+    line-height: 24px;
+    margin: 10px 0 5px;
+    font-size: 12px;
+}
+.SubmitBtn.unClick{
+    background: #ccc;
+    border: 1px solid #ccc;
+    color: #666;
+}
+.reply_box .CancelBtn{
+    width: 54px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #d6d6d6;
+    background: #fff;
+    float: right;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px 10px 5px;
+}
+.reply_box .ficon_face{
+    margin-left: 0;
+    margin-top: 13px;
+}
+.reply_box .num_S_txt{
+    height: 24px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+.reply_content{
+    border: 1px dotted #b3b3b3;
+    background: #ebf2f7;
+    margin: 10px 0;
+    padding: 0px 20px 0;
+    *padding: 20px 20px 0 ;
+    display: none;
+
+}
+.reply_content .comment_con_li{
+    border-bottom: 1px dotted #b3b3b3;
+    margin:20px 0 0;
+    position: relative;
+}
+.mark{
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    color: #1790e6;
+    text-align: center;
+    border-bottom: 1px dotted #b3b3b3;
+    cursor: pointer;
+}
+.loading{
+    text-align: center;
+    line-height: 22px;
+}
+/*分页*/
+.page{
+    margin: 20px 0;
+    text-align: center;
+}
+.page a,.page span{
+    padding: 5px 10px;
+    border: 1px solid #e6e6e6;
+    margin: 0 1px;
+    color: #666;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.page a:hover,.page a.cu{
+    background: #3591d5;
+    color: #fff;
+}
+.page.tr{
+    text-align: right;
+    margin-right: 30px;
+}
+
+/*弹窗*/
+.conmment_layer{
+    display: none;
+    width: 400px;
+    border: 1px solid #d6d6d6;
+    background: #fff;
+    position: fixed;
+    z-index: 999999;
+}
+.conmment_layer h2{
+    height: 34px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-left: 14px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #999999;
+    line-height: 34px;
+}
+.conmment_layer .close{
+    position: static;
+    width: 32px;
+    height: 34px;
+    display: block;
+    float: right;
+    background: url("../images/bg_layerclose_1.png") no-repeat left center;
+}
+.conmment_layer .clum{
+    margin: 20px 24px 0;
+}
+.conmment_layer .clum .n_span{
+    width: 80px;
+    height: 38px;
+    line-height: 38px;
+    float: left;
+    display: block;
+    color: #666666;
+    font-size: 14px;
+}
+.conmment_layer .select{
+    width: 270px;
+    float: left;
+    height: 36px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    color: #666;
+}
+.conmment_layer .reportTxt{
+    width: 340px;
+    height: 100px;
+    border: 1px solid #ccc;
+    outline: none;
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+    padding: 2px 5px;
+}
+.conmment_layer .submitBtn{
+    width: 84px;
+    height: 30px;
+    background: #3591d5;
+    border: 1px solid #3086c6;
+    float: right;
+    display: block;
+    margin: 10px 24px 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    line-height: 30px;
+}
+.conmment_layer .submitBtn.fr{
+    float: left;
+    margin: 0 0 20px 30px;
+}
+.conmment_layer .submitBtn.cl{
+    float: left;
+    margin: 0 0 20px 156px;
+}
+.conmment_layer .cancelBtn{
+    width: 84px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    float: right;
+    display: block;
+    margin: 10px 24px 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+    line-height: 30px;
+}
+.conmment_layer .cancelBtn.fl{
+    float: left;
+    margin: 0 0 20px 97px;
+}
+.conmment_layer .textCen{
+    height: 114px;
+    line-height: 114px;
+    text-align: center;
+    font-size: 18px;
+    color: #333333;
+}
+.conmment_layer .textCen span{
+    color: #3591d5;
+}
+.show{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg_show.png");
+    left: 0;
+    top: 0;
+}
+
+/*body{
+    background: #fff;
+}*/
+/*上传图片*/
+.uploadImg_box{
+    height: 150px;
+    border:1px solid #d6d6d6;
+    position: absolute;
+    left: -1px;
+    top: 39px;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+
+}
+.uploadImg_box p{
+    line-height: 22px;
+    color: #999;
+    height: 22px;
+    padding:8px 0 8px 15px;
+}
+.uploadImgBtn_b{
+    float: left;
+    position: relative;
+}
+.uploadImgBtn{
+
+}
+
+.uploadImgBtn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 0;
+    width: 98px;
+    height: 98px;
+    border: 1px dashed #cccccc;
+    background: #fff;
+    background: url("../images/upload_bg.jpg") no-repeat center;
+    color: #666666;
+    outline: none;
+    cursor: pointer;
+    margin-left: 13px;
+    float: left;
+    margin-right: 40px;
+}
+.uploadImgBtn input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    width: 100%;
+    height: 100%;
+}
+.uploadImgBtn:hover {
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+#file-list{
+    padding-left: 5px;
+    max-width: 340px;
+    overflow: hidden;
+    height: 100px;
+    float: left;
+}
+#file-list .file_li{
+    width: 100px;
+    height: 100px;
+    float: left;
+    overflow: hidden;
+    margin-left: 10px;
+    display: table;;
+}
+#file-list .file_li .tableCell{
+    width: 98px;
+    height: 98px;
+    border: 1px dashed #ccc;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+#file-list .file_li img{
+    max-width: 98px;
+    display: block;
+    margin: 0 auto;
+}
+.delImg{
+    width: 24px;
+    height: 24px;
+    background: url("../images/del.png");
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+#file-list .file_li .tableCell:hover>.delImg{
+    display: inline-block;
+}
+
+.uploadImg{
+    margin-top: 5px;
+}
+.uploadImg li{
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    float: left;
+    margin-right: 5px;
+}
+.uploadImg li img{
+    width: 80px;
+    height: 80px;
+    cursor: url("https://static.dmzj.com/module/images/big.cur"),auto;
+}
+.upload_big_img{
+    max-width: 500px;
+    margin: 10px 0 0;
+    position: relative;
+}
+.upload_big_img li{
+    padding: 10px 0;
+    display: none;
+    text-align: center;
+    cursor: url("https://static.dmzj.com/module/images/small.cur"), auto;
+}
+.upload_big_img li img{
+    max-width: 500px;
+    position: relative;
+    z-index: 2;
+}
+.upload_big_img .leftCur{
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background: #000;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    cursor: url("https://static.dmzj.com/module/images/pic_prev.cur"),auto;
+}
+.upload_big_img .rightCur{
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    background: #000;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    cursor: url("https://static.dmzj.com/module/images/pic_next.cur"),auto;
+}
+
+
+
+#box_zc{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .3);
+    display: none;
+    z-index: 998;
+}
+.Choose_way{
+    width: 538px;
+    height: 254px;
+    border: 1px solid #d6d6d6;
+    background-color: #ffffff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -128px 0 0 -270px;
+    z-index: 999;
+    display: none;
+}
+.pwdno_bound_tit{
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    padding-left: 30px;
+    padding-right: 14px;
+    font-size: 18px;
+    color: #333;
+    box-sizing: border-box;
+}
+.account_tit_font{
+    display: inline-block;
+}
+.account_close{
+    display: inline-block;
+    float: right;
+    margin-top: 14px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url('http://static.dmzj.com/ucenter/images/ucenter_ico.png') no-repeat -64px -328px;
+}
+.account_btm_cont{
+    border-top: 1px solid #d6d6d6;
+    width: 480px;
+    margin-left: 30px;
+}
+.hint_noPhoneTied{
+    height: 70px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    padding: 0 72px;
+    box-sizing: border-box;
+    line-height: 28px;
+    margin-top: 15px;
+    margin-bottom: 22px;
+}
+.hint_setBtnStyle{
+    width: 118px;
+    height: 38px;
+    display: block;
+    border: 1px solid #3086c6;
+    background-color: #3591d5;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 180px;
+}
+
+
+
+#box_zc{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .3);
+    display: none;
+    z-index: 998;
+}
+.Choose_way{
+    width: 538px;
+    height: 254px;
+    border: 1px solid #d6d6d6;
+    background-color: #ffffff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -128px 0 0 -270px;
+    z-index: 999;
+    display: none;
+}
+.pwdno_bound_tit{
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    padding-left: 30px;
+    padding-right: 14px;
+    font-size: 18px;
+    color: #333;
+    box-sizing: border-box;
+}
+.account_tit_font{
+    display: inline-block;
+}
+.account_close{
+    display: inline-block;
+    float: right;
+    margin-top: 14px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url('http://static.dmzj.com/ucenter/images/ucenter_ico.png') no-repeat -64px -328px;
+}
+.account_btm_cont{
+    border-top: 1px solid #d6d6d6;
+    width: 480px;
+    margin-left: 30px;
+}
+.hint_noPhoneTied{
+    height: 70px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    padding: 0 72px;
+    box-sizing: border-box;
+    line-height: 28px;
+    margin-top: 15px;
+    margin-bottom: 22px;
+}
+.hint_setBtnStyle{
+    width: 118px;
+    height: 38px;
+    display: block;
+    border: 1px solid #3086c6;
+    background-color: #3591d5;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 180px;
+}

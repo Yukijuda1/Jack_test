@@ -1,0 +1,74 @@
+listener监听器：
+1、概念：Servlet规范定义的一种特殊类，他用于监听web应用程序中ServletContext，
+HttpSession和ServletRequest这三个对象
+当他们发生了事件或者状态改变时，listener采取行动
+2、类型：
+一：监听域对象自身的创建和销毁
+二：监听域对象中的属性增加和删除
+三：
+
+3、listener的配置
+<listener>
+<listerner-class></listener-class>
+</listener>
+
+4、ServletContextListener：
+监听ServletContext对象被创建或销毁的Servlet监听器
+创建实现ServletContextListener借口的类，实现其中的两个方法
+
+最常用的listener。当web应用加载时，该linstener就运作，常用来数据初始化
+如：创建数据库连接池。创建Spring的IOC容器，读取当前web应用初始化数据
+
+ServletContextListener的API：
+public void contextInitialized(ServletContextEvent sce)
+当前web应用加载时调用
+
+public void contextDestroyed(ServletContextEvent sce)
+
+卸载时调用
+
+5、ServletRequestListener & HttpSessionListener	
+同理
+
+
+6、深入了解request、session的生命周期
+session就不多说了 注意Stop和Terminal是有区别的。stop后下次再开启服务器，session不变
+Terminal后再开启服务器session改变。但都不会销毁session（原因是session持久化了）
+关闭浏览器相当于Terminal了
+http://localhost/example1/listenTest/test.jsp;jsessionid=EA3A041F1CFCC2E44A20B2B940D3272A
+这样可以追踪会话，可以把这jsessionid=EA3A041F1CFCC2E44A20B2B940D3272A存到数据里
+但是每访问都要追踪。而且如果遇到getSession()仍会创建session，且后面的session都用这个了即便后面加了jsession
+
+request就是一次请求，访问一个jsp会创建一个request，并且立马request销毁
+中间可以经历转发，但他的生命仍是转瞬即逝
+
+
+7.属性变更监听器
+ServletContextAttributeListener,ServletRequestAttributeListener,HttpSessionAttributeListener
+实现上述3个接口
+attributeAdded(ServletRequestAttributeEvent srae)对象域属性增加时调用监听器
+attributeRemoved(ServletRequestAttributeEvent srae) 对象域属性移除时调用监听器
+attributeReplaced(ServletRequestAttributeEvent srae)对象域属性更改时调试监听器
+
+8、与JavaBean绑定的监听器HttpSessionBindingListener
+由JavaBean实现该接口
+重写valueBound(HttpSessionBindingEvent event)
+event.getValue可以获得这个JavaBean  。event.getName可以获得属性名
+event.getSession获得本次会话
+和valueUnbound(HttpSessionBindingEvent event)
+两个方法
+当这个JavaBean对象放入session域中，调用valueBound
+当这个JavaBean对象从session域中移除，调用valueUnbound
+
+这个监听器不需要在web.xml中配置
+
+
+9、HttpSessionActiveListen监听器借口
+与实现了序列化接口(Serializable)的JavaBean绑定
+
+当放入Session的JavaBean对象在关闭服务器时会写入磁盘
+并调用sessionWillPassivate
+当开启服务器时，会把磁盘中的该对象拿入内存中，放入session中
+并调用sessionDidActivate
+该监听器不需要配置
+

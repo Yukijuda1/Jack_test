@@ -1,0 +1,29 @@
+/*ä¾§è¾¹äºŒç»´ç */
+.float_code{
+    position: fixed;
+    bottom: 0;
+    right: 0px;
+    width: 126px;
+    height: 153px;
+    margin-left: 620px;
+}
+.close_code{
+    display: inline-block;
+    *zoom:1;*display:inline;
+    position: absolute;
+    width: 25px;
+    height: 22px;
+    top:0;
+    right:0;
+    background:url(about:blank);
+}
+.code_wrap{
+    display: inline-block;
+    *zoom:1;*display:inline;
+    position: absolute;
+    width: 109px;
+    height: 103px;
+    top:39px;
+    right:8px;
+    background:url(about:blank);
+}

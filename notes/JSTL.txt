@@ -1,0 +1,121 @@
+JSTL是标准的通用的标签函数库
+其中核心标签库最为重要
+1、核心标签库的安装：
+将jstl.jar和standar.jar放到WebContent/WEB-INF/lib中即可
+2、核心标签库在jsp中的配置
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+3:核心标签库的标签作用
+一、c:out标签，属性1：value:要显示的值是什么object,属性2：default:如果value为null，则显示default object
+属性3：escapeXmls：是否转义敏感字符，如<转换为&lt;
+
+<c:out value="${requestScope.name}"></c:out>
+
+二、c:set标签，属性1：value：设定什么值 object。属性2：var:属性名 String
+属性3：scope：放入的范围
+<c:set var="name" value="liuxiaoran" scope="request"> </c:set>
+相当于request.setAttribute("name","liuxiaoran")
+
+<c:set target="${requestScope.user }" property="username" value="liuxiaoran"></c:set>  给域对象的JavaBean赋值
+把target=“”理解橙request.getAttribute(user)获得的对象
+要么别的jsp、Servlet转发一个request中含有name为user的对象，如果没有会报错
+
+
+三、c:remove，属性1:var需要移除的属性名，属性2：scope属性名的范围
+<c:remove var="user" scope="request"></c:remove>
+
+
+流程控制：
+
+五：c:if 。属性1：test：条件，test为boolean
+属性2：var=属性名
+属性3：scope=范围
+可以把test的值放入范围内的属性名为var中,即存储判断结果
+单条件判断，满足后输出标签体内容
+<c:if test="${requestScope.age > 18}">成年了</c:if>
+
+<c:if test="${param.age>18}" var="isAdult" scope="request">成年了</c:if>
+可以把test放入请求域中，域名为isAdult
+
+
+六：c:choose，
+c:when，属性1：test=条件，为true时输出标签体内容，并直接跳出choose
+c:otherwise：所有的when标签条件都为false时输出标签体内容
+
+<c:choose>
+<c:when test="${cookie.username !=null }">
+<c:out value="welcome:${cookie.username.value }"></c:out>
+</c:when>
+<c:otherwise>
+<jsp:forward page="login.jsp"></jsp:forward>
+</c:otherwise>
+</c:choose>
+
+迭代
+
+四、c:forEach, 属性1：item：一个集合或者数组   var:集合都个对象的名字
+属性2-4：begin，end，step。没有item时从begin数字到end数字循环，间隔step数字。很少使用
+当items时则从集合begin开始end结束间隔step
+属性5：varStatus="status"开启status
+遍历集合、数组或者Map
+<c:forEach items="${requestScope.bookList }" var="bookList">
+    <ul>
+			   <li>${bookList.id }</li>
+			   <li><a href="bookInfo?id=${bookList.id }">${bookList.name }</a></li>
+		    <li>${bookList.no }</li>
+		     <li>${bookList.type }</li>
+		      <li>${bookList.number }</li>
+		       <li>${bookList.location }</li>
+		        <li>${bookList.author }</li>
+		        <li><a href="borrow?id=${bookList.id}">借阅</a></li>
+			   </ul>
+</c:forEach>
+
+<c:forEach items="${requestScope.bookMap }" var="bookMap">
+${bookMap.value.id}...map里面是一个一个的entry
+</c:forEach>
+
+数组的话就直接打印var
+
+<c:forEach items="${requestScope.bookList }" var="bookList" varStatus="stuatus">
+${status.index}索引,${status.count}第几个,${status.first}是否为第一个boolean,${status.last}
+    <ul>
+			   <li>${bookList.id }</li> 
+			   <li><a href="bookInfo?id=${bookList.id }">${bookList.name }</a></li>
+		    <li>${bookList.no }</li>
+		     <li>${bookList.type }</li>
+		      <li>${bookList.number }</li>
+		       <li>${bookList.location }</li>
+		        <li>${bookList.author }</li>
+		        <li><a href="borrow?id=${bookList.id}">借阅</a></li>
+			   </ul>
+</c:forEach>
+
+
+七：<c:forTokens> 浏览字符串中所有成员，用定义符号delimiters所分隔
+属性1：items=字符串
+属性2：var=每个字符代表名字
+属性3：delimiters=分隔符号，最后不会有分隔符号
+<c:forToken items="abcdefg" var="s" delimiter="b">
+${s}   结果就是a  和cdefg
+</c:forToken>
+
+
+URL操作
+
+八
+<c:import>包含一个页面
+属性1:URL
+
+
+九
+<c:redirect>重定向到一个页面
+属性1：URL
+
+十
+<c:url>可以根据cookie是否可用来智能进行URL重写，对get请求进行编码
+<c:url value="/test.jsp" var=	"testurl">
+<c:param name="name" value="liuxiaoran"></c:param>
+</c:url>
+${testurl }<!-- example1/test.jsp?name=liuxiaoran -->
+
+把产生的url存储在var中

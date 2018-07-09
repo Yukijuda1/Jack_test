@@ -1,0 +1,122 @@
+/*最近更新*/
+
+.geng{ background:url(../images/geng_bg.jpg) no-repeat left center; height:60px; margin-left:20px; padding-left:25px;line-height:60px; font-size:14px; color:#333333;}
+.geng_con{ padding-bottom:30px;}
+.hot_tit_dl dt{background:url(../images/geng_bg.jpg) no-repeat left center; height:60px; line-height:60px; font-size:14px; color:#333333; margin-left:20px; padding-left:25px; position: relative;z-index:99999;}
+.hot_tit_dl dd{ height:60px; line-height:60px; padding-right:20px; position:relative; z-index:9999;}
+.hot_tit_dl dd a{ color:#7f7f7f;}
+.rank_tex{ height:60px; line-height:60px; width:75px; background:url(../images/icon/icon-right.png) no-repeat right center;cursor:pointer;}
+.rank_tex_select{background:url(../images/icon/icon-down.png) no-repeat right center;}
+.rank_lists{ position:absolute; width:75px; top:60px; left:20px; z-index:999999;display:none;}
+.rank_lists li{ height:30px; line-height:30px; text-align:center;}
+.rank_lists li a{font-size:14px; color:#333333;}
+.rank_lists li a:hover{color:#fd9517;}
+
+.geng_manga li{width:112px;float:left; display:inline; margin-right:86px; height:290px; overflow:hidden;}
+.geng_manga li:nth-child(6n-5){ margin-left:19px;}
+.geng_manga li:nth-child(6n){ margin-right:19px;}
+
+
+/*排行*/
+.first_tit .pai_num{height:16px;line-height:16px; width:22px; display:inline-block; text-align:center; background:#bababa; color:#fff;font-size:12px; position:relative; top:1px; margin-right:5px;overflow:hidden;border-radius:1px;}
+.first_tit span.select{ background:#fc941d;}
+
+/*分类*/
+.type_item{ width:366px; height:307px; margin-bottom:21px;}
+.type_item:nth-child(3n-1){ margin:0 21px;}
+.type_con{ padding:0 20px;}
+.type_manga{ clear:both;}
+.type_manga li{ width:90px;float:left; display:inline; height:247px; overflow:hidden;}
+.type_manga .manga_img a{display:block;position: absolute; width:88px; height:133px; background: none;z-index:999;border:1px solid  rgba(0,0,0,0.05);border-radius:1px;}
+.type_manga .manga_img .cover_sp{display:block;position: absolute; width:90px; height:135px; background:#FFF;z-index:99;border-radius:1px;filter: alpha(opacity=0);-moz-opacity: 0;-khtml-opacity: 0;opacity: 0;}
+.type_manga .manga_img a:hover{filter: alpha(opacity=5);-moz-opacity: 0.05;-khtml-opacity: 0.05;opacity: 0.05;background: #000;border:1px solid #000;border-radius:1px; }
+.type_manga li img{ width:90px;border-radius:1px; height:135px;transition:all .25s ease 0s;}
+.type_manga li:nth-child(2){ margin:0 28px;}
+
+/*目录*/
+.cover,.cover img{ height:360px; width:100%; overflow:hidden;}
+.up_part{ width:100%; height:102px;}
+.up_list dt{ width:66px; height:66px; margin-left:20px; margin-top:18px;}
+.up_list dt img{width:66px; height:66px; border-radius:33px;}
+.up_list dd{ height:56px; margin-top:18px; margin-left:15px; padding-top:10px; width:115px;}
+.up_list dd p{ height:25px; line-height:25px; font-size:14px; width:115px;overflow:hidden;word-break:break-all;}
+.up_list dd p a,.up_list dd p span{ font-size:12px;}
+.grade{ width:100%; height:112px; text-align:center;}
+.grade_tit{ padding-top:10px;}
+.grade .grade_p{ height:40px; line-height:40px; font-size:14px;}
+.grade .grade_p a{ font-size:12px;}
+
+.ph_list{ margin-left:26px;}
+.ph_list li{ float:left; display:inline; height:90px; width:28px; margin:0 5px; margin-top:10px;}
+.ph_list li .grade_img{ height:60px; width:28px; position:relative;}
+.ph_list li .grade_img img{ position:absolute; bottom:0; left:0;}
+.grade_text{ height:30px; line-height:30px;}
+
+.catalogue_con{ padding:0 20px; padding-bottom:20px;}
+.catalogue_dl{ height:20px; color:#7f7f7f;}
+.catalogue_dl dt{ line-height:20px;}
+.catalogue_dl dt a{ color:#3476a3; margin-right:20px;}
+.catalogue_dl dt a:hover{color:#fd9517;}
+.top_author span,.bot_favarite span{display:inline-block;width:120px;overflow: hidden;height:20px;}
+
+.cata_list_con{ padding:18px 0;min-height:350px;padding-top:0;}
+.cata_list li{ width:120px; height:36px; line-height:34px;  text-align:center; float:left; display:inline; margin-bottom:24px;margin-right:24px; border-radius:1px; }
+.cata_list li:nth-child(6n){ margin-right:0;}
+.cata_list li a{ color:#727272; font-size:14px; display:block;border:1px solid #dcdcdc; width:118px; height:34px; border-radius:1px;}
+.cata_list li a:hover{background:#fff;border:1px solid #fd9517;color:#fd9517;}
+.cata_list .select_cata_li a{border:1px solid #ff9619;}
+.cata_list .select_cata_li a,.cata_list .select_cata_li a:hover{background: #ff9619;color:#fff;}
+.page_cata{ height:24px; text-align:right; padding-top:6px;}
+.page_cata a{padding:0 8px;height:18px; line-height:18px; display:inline-block; text-align:center; margin-left:10px; color:#7f7f7f;border-radius:1px;}
+.page_cata .select,.page_cata .select:hover{ background:#fd9517; color:#FFF;}
+.page_cata a:hover{background:#f2f2f2;}
+#prev,#next{display: none; font-size:14px;}
+
+.intro_info{padding:18px 0; padding-bottom:36px; position:relative;}
+.intro_info p{ line-height:20px; font-size:14px; color:#333333; text-indent:28px; height:40px;overflow:hidden;cursor: pointer;}
+.intro_info img{position:absolute; bottom:18px; right:0px; cursor: pointer;}
+
+/*评论样式*/
+.comment_dl dt span{color:#808080;font-size:12px;}
+.comment_con{ padding:0 20px;}
+.coment_part,.reply_part{ padding-top:20px; overflow:hidden;}
+.com_left,.repaly_left{ width:48px; padding-right:20px;}
+.com_left img,.repaly_left img{ width:48px; height:48px; border-radius:24px;}
+.com_right{ width:772px; border-bottom:1px solid #dcdcdc; overflow:hidden;}
+.c_tit{ height:25px; line-height:25px; font-size:14px; color:#808080;}
+.c_tit span{ font-size:12px; margin-left:10px; color:#b1b1b1;}
+.c_text{ line-height:18px; margin-top:6px; font-size:14px; color:#333; position:relative; padding-bottom:56px;}
+.reply{ position:absolute; right:0px; bottom:20px; display:block; color:#507f99;}
+.repaly_right{ width:704px; position:relative; border-bottom:1px solid #dcdcdc; overflow:hidden;}
+.padd_bot{ padding-bottom:56px;}
+.floor{ display:block; position:absolute; right:0; top:6px; color:#b1b1b1; font-size:12px;}
+.rew_text{padding:20px;background: #f4f4f4; margin-top:20px; position:relative;}
+.rew_text p{line-height:18px; margin-top:6px; font-size:14px; color:#333;}
+.rew_text .floor{right:10px;top:20px;}
+.textarea_dl .on_dt{border:1px solid #fd9517;}
+.textarea_dl dd .on_btn{background:#fd9517;}
+
+.c_texarea{ border:none;}
+.textarea_dl dt{ width:632px; height:46px; border:1px solid #dcdcdc; position:relative; overflow:hidden;}
+.textarea_dl dt span{ position:absolute; height:46px; line-height:46px; width:632px; left:0; top:0; color:#808080; padding-left:15px; font-size:14px; z-index:99;}
+.textarea_dl dt textarea{ width:592px; height:16px; padding:15px 20px; display:block;font-size:14px; border:none; resize:none; outline:none; word-break:break-all; position:absolute; z-index:999; background:none; overflow-y:hidden;}
+.textarea_dl dd{ width:60px; height:48px;}
+.textarea_dl dd input{ background:#f7bc86; display:block; width:60px; height:48px; line-height:48px; text-align:center; color:#FFF; border:none;outline:none;cursor: pointer;}
+
+.replay_cata{ height:24px; text-align:right; padding-top:6px;}
+.replay_cata a{padding:0 8px;height:18px; line-height:18px; display:inline-block; text-align:center; margin-left:10px; color:#7f7f7f;border-radius:1px;}
+.replay_cata .select,.replay_cata .select:hover{ background:#fd9517; color:#FFF;}
+.replay_cata a:hover{background:#f2f2f2;}
+#prev1,#next1{display: none; font-size:14px;}
+.replay_cata{ padding:31px 0;}
+.reviews{ width:360px;position: relative; height:250px;}
+.reviews textarea{width:338px;font-size:14px;line-height:18px; height:228px; display:block;border:1px solid #dcdcdc;padding:10px; resize:none; outline:none; word-break:break-all; position:absolute; z-index:999; background:none; overflow-y:hidden;color:#999999;}
+.reviews span{font-size:14px;}
+.rep_cen{padding:0 20px;}
+.subBtnRep{ padding:20px 0;text-align:right;width:360px;}
+.subBtnRep input{ display:inline-block;height:40px; width:80px;text-align:center;line-height:40px;color:#FFF;font-size:14px;border:none;background:#fe960e;outline:none;cursor:pointer;}
+
+
+
+
+

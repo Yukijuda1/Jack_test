@@ -1,0 +1,54 @@
+1、新的表单域
+<form action="#" method="post" enctype="multipart/form-data">
+<input type="file" name="file">
+<button type="submit">提交</button> 
+</form>
+文件域，可以选择文件
+method="post"
+enctype="multipart/form-data" 以二进制的方式读取文件
+默认为application/x-www-form-urlencoded
+
+2、服务端（Servlet或者jsp）获取二进制文件
+因为是二进制流方式传递
+不能再用request.getParameter("")的方法获取内容
+
+3、使用commons-fileupload组件完成文件上传（需要io组件）
+架包思路：解析请求request，得到一个FileItem对象组成的List对象 FileItems（List<FileItem> FileItems）
+即fileupload把所有的请求信息都解析为FileItem对象。
+可以调用FileItem对象的isFormField判断是是否是表单域（不是即为文件域）
+if(item.isFormField){
+String name=item.getFieldName();
+String value=item.getString();
+..
+}
+else(!item.isFormField){
+String fieldName=item.getFieldName();
+String fileName=item.getName();
+boolean isInMemory=item.isInMemory();
+long sizeInBytes=item.getSize();
+InputStream uploadStream =item.getInputStream();
+...
+uploadStream.out
+}
+
+如何得到List<FileItem>对象？
+一、无限制
+FileItemFactory factory =new DiskFileItemFactory();
+ServletFileUpload upload=new ServletFileUpload(factory);
+List<FileItem> items=upload.parseRequest(request)
+
+二、有限制：可以为文件的上传加入一点限制条件 
+FileItemFactory factory =new DiskFileItemFactory();
+//设置factory约束：1、当文件超过某大小时将文件写入硬盘上，单位为byte
+                                  2、设置临时文件夹，文件域超过某个大小时，把文件写入临时文件夹
+factory.setSizeThreshold(yourMaxMemorySize);
+factory.setRepositpry(yourTempDirectory);
+ServletFileUpload upload=new ServletFileUpload(factory);
+3、设置文件域总文件的最大大小，单位为byte
+upload.setSizeMax(yourMaxRequestSize);
+4、设置单个文件的大小
+upload.setFileMax(yourMaxFile);
+
+fileupload的API
+boolean isMultipart=ServletFileUpload.isMultipartContent(request)
+判断这个request是否是以二进制流传递信息的

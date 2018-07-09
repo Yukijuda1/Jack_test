@@ -1,0 +1,56 @@
+.book{
+				width: 75%;
+				height: 400px;
+				margin: 0 auto;
+			}
+			.bookPicture{
+				/*padding-left: 1%;*/
+				width: 50%;
+				height: 72%;
+				float: left;
+				background-image: url(../bgi.jpg);
+				background-repeat: no-repeat;
+				background-position: 20% 10%;
+				
+			}
+			.bookPicture img{
+				position:relative; 
+top:10%;
+bottom: 10%;
+right: 10%; 
+left:10%; 
+			}
+			.bookName{
+				width: 40%;
+				height: 24%;
+				float: left;
+			}
+			.bookType{
+				width: 40%;
+				height: 24%;
+				float: left;
+				top:10%;
+			}
+			.bookAuthor{
+				width: 40%;
+				height: 24%;
+				float: left;
+				top:10%;
+			}
+			.bookDescription{
+				width: 90%;
+				height: 28%;
+				float: left;
+			}
+			.dangerDIV{
+				width: 10%;
+				height: 72%;
+			}
+			.bw1{
+								position:relative; 
+top:10%;
+bottom: 10%;
+right: 10%; 
+left:10%; 
+font-size: 200%;
+}

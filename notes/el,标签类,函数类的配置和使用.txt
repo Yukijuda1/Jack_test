@@ -1,0 +1,112 @@
+EL表达式:
+ 1、value="${param.username }"
+ 简化value="<%= request.getParameter("username")==null ? "" : request.getParameter("username")%>"
+ 表单数据回显
+ 
+ EL写在页面中，比如可以写在元素的value=“”中，而不是写在<%  java代码中  %>
+ 
+ EL语法
+ ${param.username}
+ 相当于从request中取出param名为username的值
+ 
+ sessionScope.user.username或者sessionScope.user["username"]  //用[""]代替.
+相当于
+user u=(user)session.getAttribute("user");
+String username=u.getUsername();
+
+ ${username}
+ 依次从request、session、application中找属性名为"username"的属性值（getAttribute()）
+ 一旦找到username后不再继续查找
+ 范例：
+ ${requestScope.xxx}request中找
+ ${sessionScope.xxx}session中找
+ ${applicationSocpe.xxx}	application中找
+ 
+ EL可以自动进行类型转换
+ ${param.age+15 }  <!--当getparam..为null时，相当于默认值为15，很方便  -->
+<!-- "age"属性名的值应该是String类型的，但他会自动转型。即Integer.valueof(age)+15 -->
+输入20，结果为35
+
+${param.user.age.class.name}
+取出requset请求参数中名user的值（user u）
+取出u的age属性值（Integer）。即调用user.getAge
+调用Integer.getClass
+调用Class.getName
+
+
+范例（总）:
+ ${requestScope.xxx}request中getAttruibute找
+ ${sessionScope.xxx}session中getAttruibute找
+ ${applicationSocpe.xxx}	application中getAttruibute找
+ 
+${param.xxx}request中getParam中找
+${paramValues.xxx[0]}request中getParamValues中找（请求参数名相同，多个值）
+
+${cookie.xxx.value}获取cookie名为xxx的cookie，getValue中找
+${pageContext.xx}
+${header.xx}
+
+${pageContext.request.contextPath}
+${pageContext.session.valueNames}都是通过getXxxx方法
+
+关系运算符：
+${param.age>18 ? "adult" : "young"}
+${param.age1}>${param.age2}
+${empty requestScore.names}判断requet中Attruibute中List names是否为空。返回boolean
+empty可以作用到集合。当集合为空，或者不是一个集合时，为true
+
+
+自定义标签：
+目标：jsp页面中不出现java代码，这样能坐到合理分工
+标签也可以理解成jsp页面的函数，开发标签
+继承SimpleTagSupport或实现SimpleTag接口
+以继承来说，继承了SimpleTagSupport类的标签类中的setJspContext()可以将pageContext传入
+通过getJspContext()获得pageContext从而获取jsp中8个隐含对象
+1、三无标签:<my:name />直接调用配置过名为name的标签类的doTag方法
+
+2、带属性的标签:<my:name attribute=? />标签类含attribute属性，调用标签类的setAttribute方法将属性值传入，然后调用doTag方法
+
+3、带标签体的标签：<my:name attribute=?>bodyContent</my:name>
+继承了SimpleTagSupport的标签类实现了setJspBody方法，调用标签类后传入
+通过getJspBody获得jspFragment类的对象bodyContent
+调用bodyContent.invoke(null);直接将标签体内容打印在页面上
+另一个参数为Writter writter
+
+4、带子标签的标签
+<my:parent attribute=?>
+<my:son attribute/>
+</my:parent> 
+一、这种结构，父标签必定存在标签体，父标签的JspFragment对象bodyContent必须调用invoke(null)
+子标签的标签类才会被调用
+二、子标签可以通过getParent()方法获取一个JspTag对象（即他的父标签对象）
+通过强转后可以获得父标签对象从而获得父标签里面的属性
+三、父子标签都继承SimpleTagSupport类，之间互不继承
+
+4、标签类的配置
+ <tag>
+    <name>choose</name>标签使用名
+    <tag-class>tags.choose</tag-class>标签类所在路径
+    <body-content>scriptless</body-content>是否有标签体，有为scriptless，无为empty
+  </tag>
+  
+    <attribute>标签属性配置
+  <name>test</name>属性名
+  <required>true</required>是否必须
+  <rtexprvalue>true</rtexprvalue>是否允许使用el表达式，建议true
+  </attribute>
+  </tag>
+  
+  
+自定义el函数（）
+${my:fnName(param.user)}
+函数类中的方法前缀必须是public static
+自定义el函数配置
+ <function>
+ <name>fnName</name>函数使用名
+ <function-class>elFunction.MyELFunctions</function-class>函数类所在路径
+ <function-signature>java.lang.String fnName(java.lang.String,java.lang.String)</function-signature>方法的所有信息
+ </function>
+ 
+ 
+ 总结：通过自定义标签和自定义函数，并配置完毕后可以打打简化jsp的代码部署
+ 当然<%%>里写java代码也不是不可以

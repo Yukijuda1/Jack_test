@@ -1,0 +1,18 @@
+1、禁用缓存：
+缓存的存在会导致无法看到最近内容，比如图片
+	response.setDateHeader("Expires", -1);
+		response.setHeader("Cache-Control","no-cache");
+		response.setHeader("Prama", "no-cache");
+
+2、字符编码过滤器
+	request.setCharacterEncoding("UTF-8");
+	
+	
+3、需要验证登录的页面
+
+
+
+4、权限管理：
+
+
+5、不雅文字屏蔽，跳过

@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+/*公共弹层*/
+.window_show {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    left: 0;
+    top: 0;
+    z-index: 99999;
+}
+
+/*成功订阅*/
+.point_wrap,.red_box{
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    position: fixed;
+    _position: absolute;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -100px;
+    display: none;
+    z-index: 9999;
+    font-family: "微软雅黑";
+}
+.point_wrap{
+    z-index: 99999;
+}
+.point_wrap .close_scri,.red_box .close_box{
+    position: absolute;
+    top:5px;
+    right:10px;
+    width: 26px;
+    height:23px;
+    background:url(https://static.dmzj.com/ocomic/images/mh_intro/intro_ico.png) no-repeat  -60px 4px;
+    cursor: pointer;
+}
+
+.point_wrap .point_wrap_head,.red_box .point_wrap_head{
+    width: 400px;
+    height:34px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.point_wrap .point_wrap_head p,.red_box .point_wrap_head p{
+    width: 60px;
+    height:20px;
+    font-size: 14px;
+    color:#666;
+    padding: 10px 0 0 10px;
+}
+.point_wrap .point_wrap_con,.red_box .point_wrap_con{
+    width: 400px;
+    height:200px;
+    text-align: center;
+}
+.point_wrap p.dy_success,.red_box p.dy_success{
+    font-size: 18px;
+    margin-top: 22px;
+    height:20px;
+}
+.point_wrap_con p.dy_success a.c{
+    color:#fe5419;
+}
+.point_wrap_con p.noti,.red_box p.manag{
+    font-size: 14px;
+    margin-top: 12px;
+    height:20px;
+    color:#666;
+}
+.point_wrap p.manag a,.red_box p.manag a{
+    text-decoration: underline;
+    color:#666;
+}
+.point_wrap_con a.su_btn_scri{
+    display: inline-block;
+    width: 86px;
+    height:32px;
+    text-align: center;
+    line-height: 32px;
+    background:#3591d5;
+    color:#fff;
+    margin: 15px auto;
+}
+.red_box a.lz_btn,.red_box a.next_btn{
+    margin-top: 32px;
+}
+.red_box .point_wrap_con a.lz_btn{
+    margin-right: 8px;
+}
+.point_succed  a.qd_btn{
+    margin-top: 30px;
+}
+.point_readed  p.dy_success{
+    margin-top: 40px;
+}
+.point_udl  p.dy_success{
+    margin-top: 50px;
+}
+.point_udl  a.qd_btn{
+    margin-top: 50px;
+}
+
+/*投票弹层*/
+.vote_wrap{
+    width:508px;
+    min-height:350px;
+    padding:15px;
+    border:1px solid #d6d6d6;
+    background:#fff;
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index: 99999;
+    margin-left:-269px;
+    margin-top: -190px;
+}
+.vote_wrap .close_vote{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: url(../../ocomic/images/mh_intro/close_vote.png) no-repeat;
+    cursor: pointer;
+}
+.vote_wrap .vote_til{
+    color:#333;
+    font-size: 18px;
+    line-height: 39px;
+    border-bottom: 1px solid #d6d6d6;
+    padding-right: 15px;
+    margin:0 15px 15px;
+}
+.vote_wrap .vote_main{
+	margin:0 20px;
+}
+.vote_wrap .optionView{
+    color:#666666;
+    position: relative;
+    margin: 5px 0;
+}
+.vote_wrap .optionView .optName{
+    width:285px;
+    display:inline-block;
+}
+.vote_wrap .optionView .optImg{
+    width:100px;
+    height:10px;
+    display: inline-block;
+    position: absolute;
+    left:285px;
+    top:3px;
+}
+.optImg div{
+    display: inline-block;
+    height:10px;
+}
+.vote_wrap .optionView .optNum{
+    position:absolute;
+    right:0;
+}
+
+.opt1,.opt9,.opt17{
+    background:#3591d5;
+}
+.opt2,.opt10,.opt18{
+    background:#fe5419;
+}
+.opt3,.opt11,.opt19{
+    background: #f0c11d;
+}
+.opt4,.opt12,.opt20{
+    background: #1bc86c;
+}
+.opt5,.opt13{
+    background: #08c5ed;
+}
+.opt6,.opt14{
+    background: #89c612;
+}
+.opt7,.opt15{
+    background: #ff1c61;
+}
+.opt8,.opt16{
+    background: #5240f9;
+}

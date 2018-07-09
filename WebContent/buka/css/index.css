@@ -1,0 +1,100 @@
+/*轮换图部分*/
+.rotate{ width:100%; height:246px; background:#FFF; position:relative; }
+.rotate_img{ width:880px; height:200px;overflow:hidden;}
+.rotate_img img{ width:880px; height:200px;}
+.rotate_text{ width:100%; height:46px; line-height:46px;}
+.ratate_left{ width:780px; height:46px; overflow:hidden;}
+.list_text{ height:46px; line-height:46px;}
+.list_text a{ padding-left:20px;}
+.list_text li span{margin-left:20px;color:#7f7f7f;}
+.ratate_right{ width:100px; height:46px; position:relative;}
+.btns{ position:absolute; height:12px; top:50%; margin-top:-6px;}
+.btns li{ float:left; display:inline; width:12px; height:12px; margin:0 4px; cursor:pointer;overflow:hidden;}
+.btns li:nth-child(1){ background:url(../images/icon/1.png) no-repeat; background-position:0px 0px;}
+.btns li:nth-child(2){ background:url(../images/icon/2.png) no-repeat; background-position:0px 0px;}
+.btns li:nth-child(3){ background:url(../images/icon/3.png) no-repeat; background-position:0px 0px;}
+.btns li:nth-child(4){ background:url(../images/icon/4.png) no-repeat; background-position:0px 0px;}
+.btns li.select{ background-position:0 -14px;}
+
+/*推荐图部分*/
+.recommend{ width:100%; height:152px; overflow:hidden;}
+.recommend_list{ width:9999px; position:relative;}
+.recommend_list li{ width:280px; height:146px; margin-right:20px; background:#FFF;}
+.recommend_pic img{ width:280px; height:100px;transition:all .25s ease 0s;}
+.recommend_pic img:hover {filter: alpha(opacity=90);-moz-opacity: 0.9;-khtml-opacity: 0.9;opacity: 0.9;background: #000; }
+.recommend_text{ width:100%; height:46px; line-height:46px;}
+.recommend_text a{ padding-left:20px;}
+.recommend_text a span{ color:#7F7F7F;}
+
+
+
+
+
+/*右侧部分*/
+.page_right{ width:240px; float:right;}
+.user_part{ width:100%; height:246px; background:#FFF;}
+.user_top{ text-align:center; height:92px; padding-top:20px; position: relative;}
+.headtxt{ display: none; position: absolute; top: 120px; left: 45px; z-index: 9999999;}
+.headtxt span{ position: relative; display: block; width: 135px; color: #fff; background:rgba(253, 149, 23, .4); padding: 8px;
+-webkit-border-radius: 10px; -moz-border-radius: 10px;border-radius: 10px;}
+.headtxt span:before{pointer-events: none;position: absolute;content: '';border-style: solid;left: calc(50% - 10px);top: -10px;border-width: 0 10px 10px 10px;border-color: transparent transparent rgba(253, 149, 23, .4) transparent;}
+.headtxt b{ display: none;}
+.logout{position: absolute;display:none;width: 40px;height:24px;line-height:24px; color:#727272;left:10px; top:10px;text-align: center;}
+.edit_head{position: absolute;display:none;width: 40px;height:24px;line-height:24px; color:#727272;right:10px; top:10px;text-align: center;}
+.logout:hover,.edit_head:hover{color:#7f7f7f;background: #f2f2f2;}
+.user_top img{ width:90px; height:90px; border-radius:45px;}
+.user_cen{ height:60px; width:100%; text-align:center;}
+.user_cen .author{ height:40px; line-height:40px; border:0; width:200px;overflow:hidden;}
+.user_cen p{ height:22px; line-height:22px; color:#bfbfbf; border:1px solid #E7E7E7; width:64px; margin:0 auto; }
+.user_cen p a{ color:#808080; font-size:14px;}
+.user_cen p a:hover{color:#fd9517;}
+.user_cen p .manga_tg{font-size:12px;display:block;}
+.user_cen p .manga_tg:hover{color:#7f7f7f;background: #f2f2f2;}
+.user_bot{ width:100%; height:72px;}
+.user_b_list li{ width:80px; float:left; display:inline; text-align:center; height:60px; padding-top:12px;}
+.user_b_list li p{ height:24px; line-height:24px;}
+.user_b_list li p a{ color:#808080;}
+.user_b_list li p a:hover{color:#fd9517;}
+.user_b_list li p .num{ color:#bfbfbf; font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+
+.login_part{ padding:0 20px;}
+.login_r_top{ height:50px; width:200px; line-height:50px; color:#666666;}
+.login_r_top span{color:#dd052a;}
+.close{display:none;position:absolute;right:5px;top:50%;margin-top:-4px; cursor: pointer;z-index: 999999;}
+.login_r_cen{ height:72px; width:198px;}
+.login_r_list{ width:198px; height:72px; margin:0 auto;}
+.login_r_list li{ position:relative;border:1px solid #e5e5e5;height:28px;width:196px;overflow: hidden; }
+.text_login{ display: block; height:28px;line-height: 28px;position: absolute;left: 10px;top:0;color:#999999;}
+.login_r_list li input{display:block;border:0;font-size:12px;padding:4px 0;height:20px;  color:#999999;outline: none; width:186px; padding-left:10px;}
+.inp_login{position: absolute;top:0; left:0;background: none;z-index: 9999;}
+.login_r_list .email_l{ margin-bottom:10px;}
+.yanzheng{ height:30px; padding:9px 0;}
+.dl_yz dt{ width:96px; border:1px solid #e5e5e5; height:28px;overflow: hidden;position: relative;}
+.dl_yz dt input{ border:0; width:86px;outline: none; height:20px;padding:4px 0;font-size:12px;  padding-left:10px; color:#999999;}
+.dl_yz dd,.dl_yz dd img{ width:90px; height:30px;}
+.login_r_btn{ height:30px; width:200px;}
+.login_r_btn input{ display:block; width:200px;outline:none; height:30px; line-height:30px; text-align:center; color:#FFF; background:#fe960e; border:0; cursor: pointer;border-radius:1px;}
+.login_r_bot{ height:38px; line-height:38px; text-align:right;}
+.login_r_bot a{ color:#999999;}
+.login_r_bot a:hover{ color:#fd9517;}
+.login_r_bot span{ color:#dcdcdc; margin:0 5px;}
+
+/*排行榜*/
+.charts{ width:100%; padding-bottom:30px; background:#FFF; height:432px; overflow:hidden;}
+.charts_date li{ width:80px; float:left; height:60px; line-height:60px; text-align:center; color:#999999; cursor:pointer;}
+.charts_date .select{ color:#fd9517;}
+
+.charts_list{ width:220px; height:360px; overflow:hidden;}
+.charts_list li{ padding-left:20px; clear:both;}
+.charts_list li .num{ height:16px; line-height:16px; width:22px; display:block; text-align:center; background:#f2f2f2; color:#b3b3b3; margin-top:10px; position:relative; overflow:hidden;border-radius:1px;}
+.charts_list li .charts_num{ background:#fc941d; color:#FFF;}
+.charts_list li a{ display:block; height:36px; line-height:36px; padding-left:10px; overflow:hidden;}
+.charts_list li .qushi{ display:block; height:36px; line-height:36px; width:30px; text-align:left; color:#b3b3b3; padding-left:10px; overflow:hidden;}
+.charts_list li .up{ background:url(../images/up.jpg) no-repeat left center;}
+.charts_list li .nomarl{ background:url(../images/normal.jpg) no-repeat left center;}
+.charts_list li .down{ background:url(../images/down.jpg) no-repeat left center;}
+
+.ad,.ad img{ width:100%;}
+.ad152,.ad152 img{ width:100%; height:152px;}
+
+.tit_60 .lz{ height:60px; line-height:60px; text-indent:20px; color:#4d4d4d;}

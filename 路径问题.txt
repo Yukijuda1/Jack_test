@@ -1,0 +1,41 @@
+request.getServletContext().getContextPath()
+为app根目录
+request.getServletContext().getContextPath()+"/xxxx.jsp"写成绝对路径最好
+
+request.getServletContext().getRealPath("/WEB-INF/imgs/")+"\\" +文件名
+保存和获取文件名
+request.getServletContext().getRealPath("/mail/")+"MyEmail.eml
+
+String dataBasePath="http://localhost/example1/imgs/"+randomName;入库路径
+String filePath=request.getServletContext().getRealPath("/content/")+"\\"+randomName;	放置路径
+
+		response.setContentType("text/html");
+		response.setCharacterEncoding("UTF-8");
+		//
+		response.setContentType("text/javascript");
+response.setCharacterEncoding("UTF-8");$.getJSON
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/buka/css/layui.css"  media="all"> layui css
+ <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script> layui js
+ <a href="${pageContext.request.contextPath}/index.jsp" title="主页"></a>链接写法		
+ ${pageContext.request.contextPath}/guide/functions.png  图片绝对路径
+		
+<script type="text/javascript" src="${pageContext.request.contextPath}/Ajax/jquery-1.7.2.js"></script>		ddd
+src="${pageContext.request.contextPath}/+、、
+
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ 核心标签库
+ 
+String requestUrl=request.getRequestURL().toString();//  http://localhost/example1/needLogin/test.jsp
+	String requestUri=request.getRequestURI();//  /example1/needLogin/test.jsp
+	String servletPath=request.getServletPath();//   /needLogin/test.jsp
+	
+	
+	E:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\example1\imgs
+	TOMCAT服务器路径
+	
+	
+	时间问题：取出来的时间是Timestamp ts=(Timestamp) dao.getforValues(conn, sql);是Timestamp
+	调用.toString() 得到2018-03-18 18:25:53.0
+	
+	存入时Date date=new Date();Timestamp ts=new Timestamp(date.getTime());可存入当前时间	Timestamp createtime=new Timestamp(new Date().getTime());
