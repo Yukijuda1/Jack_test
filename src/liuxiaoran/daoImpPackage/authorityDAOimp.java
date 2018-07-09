@@ -30,6 +30,7 @@ public class authorityDAOimp extends jdbcDAOimp<authority> implements authorityD
 	@Override
 	public void becomeManager(Integer user_id) {
 		// TODO Auto-generated method stub
+		System.out.println("hi");
 		String sql="update authority set auth_name='manager' where user_id=?";
 		try {
 			update(conn, sql, user_id);
